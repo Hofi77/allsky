@@ -1,9 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-    <meta http-equiv="refresh" content="0; url=image.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hofstadler AllSkyCam</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        header {
+            background-color: #111;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        img.live-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+        }
+    </style>
 </head>
 <body>
-    <script>window.location.href = "image.jpg";</script>
+    <header>
+        <h1>Hofstadler AllSkyCam</h1>
+    </header>
+    <div class="container">
+        <img src="image.jpg" alt="Allsky Live Image" class="live-image">
+    </div>
 </body>
 </html>
