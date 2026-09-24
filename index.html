@@ -3,9 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hofstadler AllSkyCam</title>
-    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <title>Cosmic Cathedral AllSkyCam</title>
     <style>
         body { background-color: #000; color: #fff; font-family: sans-serif; margin: 0; padding: 0; }
         .header { display: flex; align-items: center; padding: 10px; background: #111; }
@@ -15,15 +13,13 @@
         .main-container { position: relative; display: inline-block; width: 100%; text-align: center; }
         .img-container { position: relative; display: inline-block; max-width: 100%; }
         .img-container img { max-width: 100%; height: auto; display: block; }
-        .left-menu { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.5); border: 1px solid #555; border-radius: 6px; display: flex; flex-direction: column; padding: 5px; gap: 8px; z-index: 10; }
-        .left-menu i { color: #ccc; font-size: 1.2rem; padding: 5px; cursor: pointer; }
         .footer-link { position: fixed; bottom: 10px; right: 10px; color: #888; text-decoration: none; font-size: 0.8rem; }
     </style>
 </head>
 <body>
     <div class="header">
         <span class="btn-allsky">Allsky</span>
-        <span class="title">Hofstadler AllSkyCam</span>
+        <span class="title">DEIN NEUER NAME</span>
     </div>
 
     <div id="aurora-container" class="aurora">
@@ -32,22 +28,13 @@
 
     <div class="main-container">
         <div class="img-container">
-            <div class="left-menu">
-                <i class="fa fa-line-chart" title="Analytics"></i>
-                <i class="fa fa-play-circle" title="Timelapse"></i>
-                <i class="fa fa-bars" title="Keogram"></i>
-                <i class="fa fa-star" title="Startrails"></i>
-                <i class="fa fa-arrows-alt" title="Full Screen"></i>
-                <i class="fa fa-info-circle" title="Information"></i>
-            </div>
             <img id="current-image" src="image.jpg" alt="Allsky Live Image">
         </div>
     </div>
 
-    <a href="https://github.com/thomasjacquin/allsky" class="footer-link"><i class="fa fa-tools"></i> Build your own</a>
+    <a href="https://github.com/thomasjacquin/allsky" class="footer-link">Build your own</a>
 
     <script>
-        // Aurora-Daten automatisch aus der hochgeladenen data.json laden
         async function loadAuroraData() {
             try {
                 const response = await fetch('data.json');
