@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cosmic Cathedral AllSkyCam</title>
+    <title>Cosmic Cathedral Allsky Cam</title>
     <style>
         body { background-color: #000; color: #fff; font-family: sans-serif; margin: 0; padding: 0; }
         .header { display: flex; align-items: center; padding: 10px; background: #111; }
@@ -19,19 +19,36 @@
 <body>
     <div class="header">
         <span class="btn-allsky">Allsky</span>
-        <span class="title">DEIN NEUER NAME</span>
+        <span class="title">Cosmic Cathedral Allsky Cam</span>
     </div>
 
-    <div class="aurora">
-        Aurora activity: <span style="color:#f39c12">Unsettled</span>
+    <div id="aurora-container" class="aurora">
+        Aurora activity: Loading...
     </div>
 
     <div class="main-container">
         <div class="img-container">
-            <img src="image.jpg" alt="Allsky Live Image">
+            <img id="current-image" src="image.jpg" alt="Allsky Live Image">
         </div>
     </div>
 
     <a href="https://github.com/thomasjacquin/allsky" class="footer-link">Build your own</a>
+
+    <script>
+        async function loadAuroraData() {
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+                if (data && data.aurora) {
+                    document.getElementById('aurora-container').innerHTML = 'Aurora activity: ' + data.aurora;
+                } else {
+                    document.getElementById('aurora-container').innerHTML = 'Aurora activity: <span style="color:#f39c12">Unsettled</span>';
+                }
+            } catch (e) {
+                document.getElementById('aurora-container').innerHTML = 'Aurora activity: <span style="color:#f39c12">Unsettled</span>';
+            }
+        }
+        loadAuroraData();
+    </script>
 </body>
 </html>
