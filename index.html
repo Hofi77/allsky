@@ -10,8 +10,8 @@
         .btn-allsky { background: #555; color: #fff; padding: 4px 10px; border-radius: 4px; text-decoration: none; margin-right: 15px; font-weight: bold; }
         .title { font-size: 1.2rem; font-weight: normal; }
         .aurora { padding: 10px; font-size: 0.9rem; font-weight: bold; }
-        .main-container { position: relative; display: inline-block; width: 100%; text-align: center; }
-        .img-container { position: relative; display: inline-block; max-width: 100%; }
+        .main-container { text-align: center; width: 100%; }
+        .img-container { display: inline-block; max-width: 100%; }
         .img-container img { max-width: 100%; height: auto; display: block; }
         .footer-link { position: fixed; bottom: 10px; right: 10px; color: #888; text-decoration: none; font-size: 0.8rem; }
     </style>
@@ -22,33 +22,16 @@
         <span class="title">DEIN NEUER NAME</span>
     </div>
 
-    <div id="aurora-container" class="aurora">
-        Aurora activity: Loading...
+    <div class="aurora">
+        Aurora activity: <span style="color:#f39c12">Unsettled</span>
     </div>
 
     <div class="main-container">
         <div class="img-container">
-            <img id="current-image" src="image.jpg" alt="Allsky Live Image">
+            <img src="image.jpg" alt="Allsky Live Image">
         </div>
     </div>
 
     <a href="https://github.com/thomasjacquin/allsky" class="footer-link">Build your own</a>
-
-    <script>
-        async function loadAuroraData() {
-            try {
-                const response = await fetch('data.json');
-                const data = await response.json();
-                if (data && data.aurora) {
-                    document.getElementById('aurora-container').innerHTML = 'Aurora activity: ' + data.aurora;
-                } else {
-                    document.getElementById('aurora-container').innerHTML = 'Aurora activity: <span style="color:#f39c12">Sep 24: Unsettled</span> <span style="color:#f39c12">Sep 25: Unsettled</span> <span style="color:#2ecc71">Sep 26: Quiet</span>';
-                }
-            } catch (e) {
-                document.getElementById('aurora-container').innerHTML = 'Aurora activity: <span style="color:#f39c12">Sep 24: Unsettled</span> <span style="color:#f39c12">Sep 25: Unsettled</span> <span style="color:#2ecc71">Sep 26: Quiet</span>';
-            }
-        }
-        loadAuroraData();
-    </script>
 </body>
 </html>
